@@ -1,5 +1,17 @@
 # 8byte Intern Assignment – DevOps Deployment Project
 
+## Table of Contents
+- [Objectives](#objectives)
+- [Architecture Overview](#architecture-overview)
+- [Run Application Locally](#run-application-locally)
+- [Dockerizing the Application](#dockerizing-the-application)
+- [Infrastructure Provisioning with Terraform](#infrastructure-provisioning-with-terraform)
+- [Deploy Application on EC2](#deploy-application-on-ec2)
+- [GitHub Actions CI/CD](#github-actions-cicd)
+- [Infrastructure Lifecycle & Cost Management](#infrastructure-lifecycle--cost-management)
+- [Final Outcome](#final-outcome)
+
+
 This project demonstrates an end-to-end DevOps workflow by deploying a containerized Node.js application on AWS infrastructure provisioned using Terraform and automated using GitHub Actions CI/CD.
 
 
@@ -78,7 +90,7 @@ terraform.tfvars	    Stores environment-specific values
 main.tf	Contains      infrastructure resources
 outputs.tf	          Displays useful outputs (EC2 Public IP)
 
-To create resources on AWS locally using Terraform, you need AWS credentials. These are obtained by creating an IAM user with programmatic access and generating an Access Key ID and Secret Access Key
+To create resources on AWS locally using Terraform, you must provide AWS credentials. These credentials are obtained by creating an IAM user with programmatic access and generating an Access Key ID and Secret Access Key. Terraform uses these keys to authenticate and provision AWS resources.
 
 IAM User
 ![IAM User](screenshots/iamuser.png)
