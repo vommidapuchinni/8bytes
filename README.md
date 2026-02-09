@@ -13,7 +13,7 @@
 
 ## Public Application Access
 The deployed Node.js application is accessible at:  
-http://http://98.92.148.150/:3000
+http://98.92.148.150:3000/
 
 ## Prerequisites
 
