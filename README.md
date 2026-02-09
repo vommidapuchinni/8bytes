@@ -95,12 +95,14 @@ terraform/
 provider.tf, variables.tf, terraform.tfvars, main.tf, outputs.tf
 
 Purpose of Each File
-File	                         Purpose
-provider.tf	     --->        Configures AWS provider (region: us-east-1)
-variables.tf	   --->     Defines reusable input variables
-terraform.tfvars	--->    Stores environment-specific values
-main.tf	Contains  --->    infrastructure resources
-outputs.tf	      --->    Displays useful outputs (EC2 Public IP)
+| File            | Purpose                                    |
+|-----------------|--------------------------------------------|
+| provider.tf     | Configures AWS provider (region: us-east-1)|
+| variables.tf    |Defines reusable input variables            |
+| Internet Gateway| Stores environment-specific values         |
+| main.tf	Contains| infrastructure resources                   |
+| outputs.tf      |  Displays useful outputs (EC2 Public IP)   |
+
 
 To create resources on AWS locally using Terraform, you must provide AWS credentials. These credentials are obtained by creating an IAM user with programmatic access and generating an Access Key ID and Secret Access Key. Terraform uses these keys to authenticate and provision AWS resources.
 
