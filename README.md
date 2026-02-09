@@ -110,6 +110,7 @@ Internet gateway
 ![Internet Gateway](screenshots/igw.png) 
 Security groups
 ![Security Groups](screenshots/securitygrps.png)
+Route table and subnet association also done but that screenshot was missed
 
 # Push the code to github
 create new git repository
