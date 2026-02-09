@@ -84,7 +84,7 @@ IAM User
 ![IAM User](screenshots/iamuser.png)
 Scerte keys creation for credentials
 ![Key Creation](screenshots/keycreation.png) 
-Access and screte keys
+Access and secret keys
 ![Access Keys](screenshots/accesskeys.png)
 
 ### Terraform Commands
@@ -119,29 +119,37 @@ Push code to github
 
 # Deploy Application on EC2
 ssh -i key.pem ubuntu@<EC2-PUBLIC-IP>
+
 SSH into EC2
 ![SSH into EC2](screenshots/sshintoEC2.png)
 check docker version and status by using the commands docker version && systemctl status docker
+
 Docker status
 ![Docker Status](screenshots/dockerstatus.png)
 clone repo to EC2 from github
 ![Clone Repo to EC2](screenshots/clonerepotoEC2.png)
 docker build -t app .
+
 Docker build on EC2
 ![Docker Build on EC2](screenshots/dockerbuildonEC2.png)
 docker run -d -p 3000:3000 app
+
 Docker run on EC2
 ![Docker Run on EC2](screenshots/dockerrunonEC2.png)
 Access in browser: http://<EC2-PUBLIC-IP>:3000
+
 Access app
 ![Access App with Public IP](screenshots/accessappwithpublicip.png)
 
 # GitHub Actions CI/CD
 Workflow Location: .github/workflows/ci.yml
+
 Creation of workflow files and push to github
 ![Creation of CI YAML File](screenshots/creationofciyamlfile.png)
 Pipeline Behavior
+
 Triggered on push to the main branch.
+
 ![Workflow](screenshots/workflow.png)
 I kept repo scretes that will login lo dockerhub by docker username and password
 ![Git Repo Secrets](screenshots/gitreposecrets.png)
@@ -151,8 +159,12 @@ Pipeline Steps:
 3. Build Docker image
 4. Verify successful build
 5. Push image to Docker Hub
+
+Workflow Successfully ran
 ![Job Run Successful](screenshots/jobrunsuccessful.png)
+Docker Hub
 ![Docker Hub](screenshots/dockerhub.png)
+Image pushed to docker hub
 ![Image Push to Docker Hub](screenshots/imagepushtodockerhub.png)
 This ensures every code change is automatically validated through CI.
 ![Triggering](screenshots/triggering.png)
