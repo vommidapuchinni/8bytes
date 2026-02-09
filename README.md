@@ -131,7 +131,7 @@ Push code to github
 ![Push Code to GitHub](screenshots/pushcodetogithub.png)
 
 # Deploy Application on EC2
-ssh -i key.pem ubuntu@<EC2-PUBLIC-IP>
+ssh -i key.pem ubuntu@EC2-PUBLIC-IP
 
 SSH into EC2
 ![SSH into EC2](screenshots/sshintoEC2.png)
