@@ -50,6 +50,8 @@ This project demonstrates hands-on experience in:
 
 ## Run Application Locally
 
+Before deploying to AWS, you can test and run the Node.js application on your local machine to ensure it works as expected.
+
 Install dependencies and run the application:
 
 ```bash
@@ -65,6 +67,9 @@ Open in browser: http://localhost:3000
 Expected Output: 8byte Intern Assignment Successfully Deployed
 
 ## Dockerizing the Application
+
+We will now containerize the Node.js app using Docker to prepare it for deployment on EC2.
+
 ```Dockerfile
 FROM node:18
 WORKDIR /app
@@ -76,7 +81,9 @@ CMD ["node", "app.js"]
 
 ## Build & Run
 docker build -t 8byte-intern-app . # build docker file
+
 docker run -p 3000:3000 8byte-intern-app
+
 Docker build locally
 ![Docker Build Locally](screenshots/dockerbuildlocally.png)
 Docker run locally
@@ -90,6 +97,9 @@ Access APP
 Visit: http://localhost:3000
 
 ## Infrastructure Provisioning with Terraform
+
+Terraform allows us to define and provision AWS infrastructure in code, making deployments repeatable and manageable.
+
 Directory Structure
 terraform/
 provider.tf, variables.tf, terraform.tfvars, main.tf, outputs.tf
@@ -108,17 +118,17 @@ To create resources on AWS locally using Terraform, you must provide AWS credent
 
 IAM User
 ![IAM User](screenshots/iamuser.png)
-Scerte keys creation for credentials
+Secret keys creation for credentials
 ![Key Creation](screenshots/keycreation.png) 
 Access and secret keys
 ![Access Keys](screenshots/accesskeys.png)
 
 ### Terraform Commands
-terraform init
+**terraform init**
 ![Terraform Init](screenshots/terraforminit.png)
-terraform plan
+**terraform plan**
 ![Terraform Plan](screenshots/terraformplan.png)
-terraform apply
+**terraform apply**
 ![Terraform Apply](screenshots/terraformapply.png)
 outputs
 ![Terraform Outputs](screenshots/terraformoutputs.png)
@@ -145,6 +155,8 @@ Push code to github
 ![Push Code to GitHub](screenshots/pushcodetogithub.png)
 
 ## Deploy Application on EC2
+Once the infrastructure is ready, we deploy the Dockerized Node.js application to the EC2 instance and verify it works in the cloud environment.
+
 ssh -i key.pem ubuntu@EC2-PUBLIC-IP
 
 SSH into EC2
@@ -169,6 +181,8 @@ Access app
 ![Access App with Public IP](screenshots/accessappwithpublicip.png)
 
 ## GitHub Actions CI/CD
+We will automate building, testing, and optionally pushing the Docker image using GitHub Actions to implement a full CI/CD pipeline.
+
 Workflow Location: .github/workflows/ci.yml
 
 Creation of workflow files and push to github
@@ -178,7 +192,7 @@ Pipeline Behavior
 Triggered on push to the main branch.
 
 ![Workflow](screenshots/workflow.png)
-I kept repo scretes that will login lo dockerhub by docker username and password
+repo secrets to login to Docker Hub
 ![Git Repo Secrets](screenshots/gitreposecrets.png)
 Pipeline Steps:
 1. Checkout repository
@@ -198,18 +212,21 @@ This ensures every code change is automatically validated through CI.
 
 ## Infrastructure Lifecycle & Cost Management
 
+After successfully deploying and verifying the application on AWS, it is important to manage resources efficiently and avoid unnecessary costs.
+
 The AWS infrastructure was provisioned using Terraform and the application deployment was successfully verified.
 
-To follow responsible cloud usage practices and avoid unnecessary charges, the infrastructure was destroyed after validation: terraform destroy
+To follow responsible cloud usage practices and minimize charges, the infrastructure was destroyed after validation using: terraform destroy
 
 ![Terraform Destroy](screenshots/terrafromdestroy.png)
 ![Destroy Completed](screenshots/destroycompleted.png)
 
-Since the setup is fully automated using Infrastructure as Code, the environment can be recreated at any time. I am prepared to redeploy the complete infrastructure live during evaluation if required.
+Since the setup is fully automated with Infrastructure as Code, the environment can be recreated at any time. I am prepared to redeploy the complete infrastructure live during evaluation if required.
 
 ## Final Outcome
 
-This project demonstrates a production-style DevOps workflow including:
+This project demonstrates a production-style DevOps workflow that covers the full lifecycle from setup to automation, including:
+
 1. Cloud Infrastructure Provisioning
 2. Secure AWS Networking
 3. Dockerized Application Deployment
