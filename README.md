@@ -17,7 +17,7 @@ The assignment showcases practical expertise in Infrastructure as Code, AWS clou
 
 # Architecture Overview
 
-![Architecture Diagram](screenshots/infrastructure.png)
+![Architecture Diagram](infrastructure.png)
 
 The application is deployed inside a custom AWS Virtual Private Cloud (VPC) with secure internet connectivity and controlled access.
 
@@ -33,6 +33,7 @@ GitHub Actions	     Automates Docker build (CI/CD pipeline)
 
 ### Run Application Locally
 we have to install node, nodejs, terraform, docker, docker desktop locally
+Installations
 ![NPM Install](screenshots/installations.png)
 npm install && node app.js
 ![NPM Install](screenshots/npminstall.png)
@@ -52,10 +53,15 @@ CMD ["node", "app.js"]
 ## Build & Run
 docker build -t 8byte-intern-app .
 docker run -p 3000:3000 8byte-intern-app
+Docker build locally
 ![Docker Build Locally](screenshots/dockerbuildlocally.png)
+Docker run locally
 ![Docker Run Locally](screenshots/dockerrunlocally.png)
+Docker container
 ![Docker Container](screenshots/dockercontainer.png)
+Docker image
 ![Docker Image](screenshots/dockerimage.png)
+Access APP
 ![Access App Locally by Docker](screenshots/accessapplocallybydocker.png)
 Visit: http://localhost:3000
 
@@ -73,8 +79,11 @@ main.tf	Contains      infrastructure resources
 outputs.tf	          Displays useful outputs (EC2 Public IP)
 
 To create resources on AWS locally using Terraform, you need AWS credentials. These are obtained by creating an IAM user with programmatic access and generating an Access Key ID and Secret Access Key
+IAM User
 ![IAM User](screenshots/iamuser.png)
+Scerte keys creation for credentials
 ![Key Creation](screenshots/keycreation.png) 
+Access and screte keys
 ![Access Keys](screenshots/accesskeys.png)
 
 ### Terraform Commands
@@ -84,14 +93,20 @@ terraform plan
 ![Terraform Plan](screenshots/terraformplan.png)
 terraform apply
 ![Terraform Apply](screenshots/terraformapply.png)
+outputs
 ![Terraform Outputs](screenshots/terraformoutputs.png)
 Resources Created: VPC, Public Subnet, Internet Gateway, Route Table & Association, Security Group (ports 22 and 3000), EC2 Instance (Ubuntu with Docker installed via user_data)
 
 ### Resources:
+EC2 running
 ![EC2 Running](screenshots/EC2running.png)
+VPC
 ![VPC](screenshots/vpc.png) 
+Subnet
 ![Public Subnet](screenshots/publicsubnet.png) 
+Internet gateway
 ![Internet Gateway](screenshots/igw.png) 
+Security groups
 ![Security Groups](screenshots/securitygrps.png)
 
 # Push the code to github
@@ -102,20 +117,26 @@ Push code to github
 
 # Deploy Application on EC2
 ssh -i key.pem ubuntu@<EC2-PUBLIC-IP>
+SSH into EC2
 ![SSH into EC2](screenshots/sshintoEC2.png)
 check docker version and status by using the commands docker version && systemctl status docker
+Docker status
 ![Docker Status](screenshots/dockerstatus.png)
 clone repo to EC2 from github
 ![Clone Repo to EC2](screenshots/clonerepotoEC2.png)
 docker build -t app .
+Docker build on EC2
 ![Docker Build on EC2](screenshots/dockerbuildonEC2.png)
 docker run -d -p 3000:3000 app
+Docker run on EC2
 ![Docker Run on EC2](screenshots/dockerrunonEC2.png)
 Access in browser: http://<EC2-PUBLIC-IP>:3000
+Access app
 ![Access App with Public IP](screenshots/accessappwithpublicip.png)
 
 # GitHub Actions CI/CD
 Workflow Location: .github/workflows/ci.yml
+Creation of workflow files and push to github
 ![Creation of CI YAML File](screenshots/creationofciyamlfile.png)
 Pipeline Behavior
 Triggered on push to the main branch.
@@ -132,6 +153,7 @@ Pipeline Steps:
 ![Docker Hub](screenshots/dockerhub.png)
 ![Image Push to Docker Hub](screenshots/imagepushtodockerhub.png)
 This ensures every code change is automatically validated through CI.
+![Triggering](screenshots/triggering.png)
 
 # Infrastructure Lifecycle & Cost Management
 
