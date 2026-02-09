@@ -42,6 +42,7 @@ Open in browser: http://localhost:3000
 Expected Output: 8byte Intern Assignment Successfully Deployed
 
 # Dockerizing the Application
+'''
 Dockerfile
 FROM node:18
 WORKDIR /app
@@ -49,6 +50,7 @@ COPY . .
 RUN npm install
 EXPOSE 3000
 CMD ["node", "app.js"]
+'''
 
 ## Build & Run
 docker build -t 8byte-intern-app .
