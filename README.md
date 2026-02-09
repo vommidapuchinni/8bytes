@@ -79,6 +79,7 @@ main.tf	Contains      infrastructure resources
 outputs.tf	          Displays useful outputs (EC2 Public IP)
 
 To create resources on AWS locally using Terraform, you need AWS credentials. These are obtained by creating an IAM user with programmatic access and generating an Access Key ID and Secret Access Key
+
 IAM User
 ![IAM User](screenshots/iamuser.png)
 Scerte keys creation for credentials
@@ -95,6 +96,7 @@ terraform apply
 ![Terraform Apply](screenshots/terraformapply.png)
 outputs
 ![Terraform Outputs](screenshots/terraformoutputs.png)
+
 Resources Created: VPC, Public Subnet, Internet Gateway, Route Table & Association, Security Group (ports 22 and 3000), EC2 Instance (Ubuntu with Docker installed via user_data)
 
 ### Resources:
