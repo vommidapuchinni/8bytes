@@ -64,7 +64,7 @@ Open in browser: http://localhost:3000
 ![Run Application Locally](screenshots/runsapplicationlocally.png)
 Expected Output: 8byte Intern Assignment Successfully Deployed
 
-# Dockerizing the Application
+## Dockerizing the Application
 ```Dockerfile
 FROM node:18
 WORKDIR /app
@@ -73,6 +73,7 @@ RUN npm install
 EXPOSE 3000
 CMD ["node", "app.js"]
 ```
+
 ## Build & Run
 docker build -t 8byte-intern-app . # build docker file
 docker run -p 3000:3000 8byte-intern-app
@@ -88,7 +89,7 @@ Access APP
 ![Access App Locally by Docker](screenshots/accessapplocallybydocker.png)
 Visit: http://localhost:3000
 
-# Infrastructure Provisioning with Terraform
+## Infrastructure Provisioning with Terraform
 Directory Structure
 terraform/
 provider.tf, variables.tf, terraform.tfvars, main.tf, outputs.tf
@@ -135,13 +136,13 @@ Security groups
 ![Security Groups](screenshots/securitygrps.png)
 Route table and subnet association also done but that screenshot was missed
 
-# Push the code to github
+## Push the code to github
 create new git repository
 ![GitHub Repo Creation](screenshots/githubrepocreation.png)
 Push code to github
 ![Push Code to GitHub](screenshots/pushcodetogithub.png)
 
-# Deploy Application on EC2
+## Deploy Application on EC2
 ssh -i key.pem ubuntu@EC2-PUBLIC-IP
 
 SSH into EC2
@@ -165,7 +166,7 @@ Access in browser: http://<EC2-PUBLIC-IP>:3000
 Access app
 ![Access App with Public IP](screenshots/accessappwithpublicip.png)
 
-# GitHub Actions CI/CD
+## GitHub Actions CI/CD
 Workflow Location: .github/workflows/ci.yml
 
 Creation of workflow files and push to github
@@ -193,7 +194,7 @@ Image pushed to docker hub
 This ensures every code change is automatically validated through CI.
 ![Triggering](screenshots/triggering.png)
 
-# Infrastructure Lifecycle & Cost Management
+## Infrastructure Lifecycle & Cost Management
 
 The AWS infrastructure was provisioned using Terraform and the application deployment was successfully verified.
 
@@ -203,7 +204,7 @@ To follow responsible cloud usage practices and avoid unnecessary charges, the i
 
 Since the setup is fully automated using Infrastructure as Code, the environment can be recreated at any time. I am prepared to redeploy the complete infrastructure live during evaluation if required.
 
-# Final Outcome
+## Final Outcome
 
 This project demonstrates a production-style DevOps workflow including:
 1. Cloud Infrastructure Provisioning
