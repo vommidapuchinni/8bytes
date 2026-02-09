@@ -21,15 +21,15 @@ The assignment showcases practical expertise in Infrastructure as Code, AWS clou
 
 The application is deployed inside a custom AWS Virtual Private Cloud (VPC) with secure internet connectivity and controlled access.
 
-Component	Purpose
-VPC	                  Custom isolated cloud network
-Public                Subnet	Hosts the EC2 instance
-Internet Gateway	    Enables internet connectivity
-Route Table	          Routes outbound internet traffic
-Security Group	      Allows SSH (22) and App access (3000)
-EC2 Instance	       Hosts the Dockerized application
-Docker	             Runs the Node.js application
-GitHub Actions	     Automates Docker build (CI/CD pipeline)
+    *Component	                     *Purpose
+1. VPC	                  Custom isolated cloud network
+2. Public                Subnet	Hosts the EC2 instance
+3. Internet Gateway	    Enables internet connectivity
+4. Route Table	          Routes outbound internet traffic
+5. Security Group	      Allows SSH (22) and App access (3000)
+6. EC2 Instance	       Hosts the Dockerized application
+7. Docker	             Runs the Node.js application
+8. GitHub Actions	     Automates Docker build (CI/CD pipeline)
 
 ### Run Application Locally
 we have to install node, nodejs, terraform, docker, docker desktop locally
