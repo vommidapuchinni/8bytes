@@ -96,11 +96,11 @@ provider.tf, variables.tf, terraform.tfvars, main.tf, outputs.tf
 
 Purpose of Each File
 File	                         Purpose
-provider.tf	          Configures AWS provider (region: us-east-1)
-variables.tf	        Defines reusable input variables
-terraform.tfvars	    Stores environment-specific values
-main.tf	Contains      infrastructure resources
-outputs.tf	          Displays useful outputs (EC2 Public IP)
+provider.tf	     --->        Configures AWS provider (region: us-east-1)
+variables.tf	   --->     Defines reusable input variables
+terraform.tfvars	--->    Stores environment-specific values
+main.tf	Contains  --->    infrastructure resources
+outputs.tf	      --->    Displays useful outputs (EC2 Public IP)
 
 To create resources on AWS locally using Terraform, you must provide AWS credentials. These credentials are obtained by creating an IAM user with programmatic access and generating an Access Key ID and Secret Access Key. Terraform uses these keys to authenticate and provision AWS resources.
 
@@ -199,6 +199,7 @@ This ensures every code change is automatically validated through CI.
 The AWS infrastructure was provisioned using Terraform and the application deployment was successfully verified.
 
 To follow responsible cloud usage practices and avoid unnecessary charges, the infrastructure was destroyed after validation: terraform destroy
+
 ![Terraform Destroy](screenshots/terrafromdestroy.png)
 ![Destroy Completed](screenshots/destroycompleted.png)
 
