@@ -11,6 +11,10 @@
 - [Infrastructure Lifecycle & Cost Management](#infrastructure-lifecycle--cost-management)
 - [Final Outcome](#final-outcome)
 
+## Public Application Access
+The deployed Node.js application is accessible at:  
+http://http://98.92.148.150/:3000
+
 ## Prerequisites
 
 Before running this project locally or provisioning infrastructure, ensure you have:
@@ -146,7 +150,8 @@ Internet gateway
 ![Internet Gateway](screenshots/igw.png) 
 Security groups
 ![Security Groups](screenshots/securitygrps.png)
-Route table and subnet association also done but that screenshot was missed
+Route table and subnet association
+![Route table](screenshots/routetable.png)
 
 ## Push the code to github
 create new git repository
