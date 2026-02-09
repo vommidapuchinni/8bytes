@@ -42,7 +42,7 @@ Open in browser: http://localhost:3000
 Expected Output: 8byte Intern Assignment Successfully Deployed
 
 # Dockerizing the Application
-'''Dockerfile
+```Dockerfile
 FROM node:18
 WORKDIR /app
 COPY . .
