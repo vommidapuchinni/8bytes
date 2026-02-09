@@ -11,40 +11,51 @@
 - [Infrastructure Lifecycle & Cost Management](#infrastructure-lifecycle--cost-management)
 - [Final Outcome](#final-outcome)
 
+## Prerequisites
 
-This project demonstrates an end-to-end DevOps workflow by deploying a containerized Node.js application on AWS infrastructure provisioned using Terraform and automated using GitHub Actions CI/CD.
+Before running this project locally or provisioning infrastructure, ensure you have:
+
+- Node.js & npm
+- Docker & Docker Desktop
+- Terraform
+- AWS Account with IAM user credentials (Access Key ID & Secret Access Key)
 
 
-The assignment showcases practical expertise in Infrastructure as Code, AWS cloud networking, containerization, CI/CD automation, and production-style deployment practices.
+## Objectives
 
-# Objectives
+This project demonstrates hands-on experience in:
 
-1. This project highlights hands-on experience in:
-2. Infrastructure as Code using Terraform
-3. AWS Networking (VPC architecture design)
-4. Containerization using Docker
-5. Continuous Integration using GitHub Actions
-6. Application deployment on EC2 with public access
-7. Infrastructure lifecycle and cost management
+1. Infrastructure as Code using Terraform
+2. AWS Networking (VPC architecture design)
+3. Containerization using Docker
+4. Continuous Integration using GitHub Actions
+5. Application deployment on EC2 with public access
+6. Infrastructure lifecycle and cost management
 
-# Architecture Overview
+
+## Architecture Overview
 
 ![Architecture Diagram](infrastructure.png)
 
-The application is deployed inside a custom AWS Virtual Private Cloud (VPC) with secure internet connectivity and controlled access.
+| Component       | Purpose                              |
+|-----------------|--------------------------------------|
+| VPC             | Custom isolated cloud network        |
+| Public Subnet   | Hosts the EC2 instance               |
+| Internet Gateway| Enables internet connectivity        |
+| Route Table     | Routes outbound internet traffic     |
+| Security Group  | Allows SSH (22) & App (3000)        |
+| EC2 Instance    | Hosts the Dockerized application     |
+| Docker          | Runs the Node.js application         |
+| GitHub Actions  | Automates Docker build (CI/CD)       |
 
-Component	         ----->                    Purpose
-1. VPC	            ----->           Custom isolated cloud network
-2. Public            ----->    Subnet	Hosts the EC2 instance
-3. Internet Gateway	----->    Enables internet connectivity
-4. Route Table	      ----->    Routes outbound internet traffic
-5. Security Group	   ----->   Allows SSH (22) and App access (3000)
-6. EC2 Instance	   ----->    Hosts the Dockerized application
-7. Docker	         ----->     Runs the Node.js application
-8. GitHub Actions	   ----->    Automates Docker build (CI/CD pipeline)
+## Run Application Locally
 
-### Run Application Locally
-we have to install node, nodejs, terraform, docker, docker desktop locally
+Install dependencies and run the application:
+
+```bash
+npm install
+node app.js
+```
 Installations
 ![NPM Install](screenshots/installations.png)
 npm install && node app.js
@@ -63,7 +74,7 @@ EXPOSE 3000
 CMD ["node", "app.js"]
 ```
 ## Build & Run
-docker build -t 8byte-intern-app .
+docker build -t 8byte-intern-app . # build docker file
 docker run -p 3000:3000 8byte-intern-app
 Docker build locally
 ![Docker Build Locally](screenshots/dockerbuildlocally.png)
